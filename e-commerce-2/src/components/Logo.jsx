@@ -1,6 +1,6 @@
 const Logo = () => {
     return(
-        
+        <div className="row"></div>
     )
 
 }

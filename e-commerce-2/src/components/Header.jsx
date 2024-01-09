@@ -1,9 +1,11 @@
+import LogoIsadora from "../assets/LogoIsadora.png"
+
 const Header = () => {
     return(
         <div className="conteiner">
             <div className="row">
                 <div className="col">
-                    <img src="" alt="" />
+                    <img src={LogoIsadora} alt="Logo Isadora" />
                 </div>
                 <div className="col">
                     <ul class="nav">
