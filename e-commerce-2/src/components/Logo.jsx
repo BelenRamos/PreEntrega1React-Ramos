@@ -1,6 +1,8 @@
+import LogoIsadora from "../assets/LogoIsadora.png"
+
 const Logo = () => {
     return(
-        <div className="row"></div>
+        <img src={LogoIsadora} alt="Logo Isadora" />
     )
 
 }

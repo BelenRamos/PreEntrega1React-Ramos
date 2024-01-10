@@ -1,30 +1,19 @@
-import LogoIsadora from "../assets/LogoIsadora.png"
+import BtnCreaCuenta from "./BtnCreaCuenta";
+import Logo  from "./Logo"
+import NavBar from "./NavBar";
 
 const Header = () => {
     return(
-        <div className="conteiner">
+        <div className="conteiner my-4">
             <div className="row">
-                <div className="col">
-                    <img src={LogoIsadora} alt="Logo Isadora" />
+                <div className="col-md-2 mx-auto d-flex justify-content-center"> 
+                    <Logo/>
                 </div>
-                <div className="col">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link"  href="#">Summer Looks</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Coleccion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Beauty & Spa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gift Card</a>
-                        </li>
-                    </ul>
+                <div className="col-md-5 d-flex align-items-center">
+                    <NavBar/>
                 </div>
-                <div className="col">
-                    <a href="" className="btn btn-warning">Crea una cuenta</a>
+                <div className="col-md-3 txt-end">
+                    <BtnCreaCuenta/>
                 </div>
             </div>
         </div>
