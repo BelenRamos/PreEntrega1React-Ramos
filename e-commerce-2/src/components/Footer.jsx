@@ -3,46 +3,46 @@ const Footer = () => {
         <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2">
-                        <h5>Sección 1</h5>
+                    <div class="col-md-3">
+                        <h6>¡Te ayudamos!</h6>
                         <ul class="list-unstyled">
-                            <li><a href="#">Enlace 1</a></li>
-                            <li><a href="#">Enlace 2</a></li>
-                            <li><a href="#">Enlace 3</a></li>
+                            <li><a href="#">Mensaje de Whatsapp</a></li>
+                            <li><a href="#">Mandanos un mail</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">
-                        <h5>Sección 2</h5>
+                        <h6>Tienda Online</h6>
                         <ul class="list-unstyled">
-                            <li><a href="#">Enlace 4</a></li>
-                            <li><a href="#">Enlace 5</a></li>
-                            <li><a href="#">Enlace 6</a></li>
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Preguntas Frecuentes</a></li>
+                            <li><a href="#">Cambios y devoluciones</a></li>
+                            <li><a href="#">Medios de Pago</a></li>
+                            <li><a href="#">Informacion de Envios</a></li>
+                            <li><a href="#">Boton de arrepentimiento</a></li>
+                            <li><a href="#">Defensa del condumidor</a></li>
+                            <li><a href="#">Reclamos</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">
-                        <h5>Sección 3</h5>
+                        <h6>Somos Isadora</h6>
                         <ul class="list-unstyled">
-                            <li><a href="#">Enlace 7</a></li>
-                            <li><a href="#">Enlace 8</a></li>
-                            <li><a href="#">Enlace 9</a></li>
+                            <li><a href="#">Sobre Isadora</a></li>
+                            <li><a href="#">Trabaja con nostros</a></li>
+                            <li><a href="#">Localizador de tiendas</a></li>
+                            <li><a href="#">Terminos y condiciones</a></li>
+                            <li><a href="#">Politicas de privacidad</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">
-                        <h5>Sección 4</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Enlace 10</a></li>
-                            <li><a href="#">Enlace 11</a></li>
-                            <li><a href="#">Enlace 12</a></li>
-                        </ul>
+                        <h5>Compra 100% segura</h5>
+                        <h6>Nuestro sitio tiene toda la seguridad para tu compra</h6>
                     </div>
                     <div class="col-md-2">
-                        <h5>Sección 5</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Enlace 13</a></li>
-                            <li><a href="#">Enlace 14</a></li>
-                            <li><a href="#">Enlace 15</a></li>
-                        </ul>
+                    <h6>Seguinos</h6>
+                    <h7>Navegando</h7>
+                        
                     </div>
+                    
                 </div>
             </div>
         </footer>
