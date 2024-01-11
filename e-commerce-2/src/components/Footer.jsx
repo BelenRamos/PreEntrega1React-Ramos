@@ -36,12 +36,12 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className="col">
-                        <h6>Compra Segura</h6>
-                        <p className="text-dark fs-8">Nuestro sitio tiene toda la seguridad para tu compra</p>
+                        <h6>Compra 100% Segura</h6>
+                        <p><small>Nuestro sitio tiene toda la seguridad para tu compra</small></p>
                     </div>
                     <div className="col">
                         <h6>Seguinos</h6>
-                        <p className="text-dark fs-8">Navegando</p>
+                        <p><small>Navegando</small></p>
                     </div>
                 </div>
             </div>

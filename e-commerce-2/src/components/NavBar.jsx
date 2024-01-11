@@ -1,7 +1,7 @@
 import CartWidget from './CartWidget';
 import BtnCreaCuenta from "./BtnCreaCuenta";
 import Logo from "./Logo";
-import ItemListContainer from "./ItemListContainer";
+
 
 const NavBar = () => {
     return(
