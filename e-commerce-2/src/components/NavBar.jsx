@@ -5,39 +5,34 @@ import ItemListContainer from "./ItemListContainer";
 
 const NavBar = () => {
     return(
-        <div className="container my-4">
+        <div className="container-fluid my-4">
             <div className="row">
-                <div className="col-md-2 mx-auto d-flex justify-content-center"> 
-                    <Logo/>
+                <div className="col-md-3 d-flex justify-content-center">
+                    <Logo />
                 </div>
                 <div className="col-md-5 d-flex align-items-center">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link"  href="#">Summer Looks</a>
+                    <ul className="nav nav-tabs">
+                        <li className="nav-item">
+                            <a className="nav-link text-dark fs-6" href="#">Summer Looks</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Coleccion</a>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark fs-6" href="#">Coleccion</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Beauty & Spa</a>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark fs-6" href="#">Beauty & Spa</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gift Card</a>
-                        </li>
-                        <li>
-                            <CartWidget/>
+                        <li className="nav-item">
+                            <a className="nav-link text-dark fs-6" href="#">Gift Card</a>
                         </li>
                     </ul>
                 </div>
-                <div className="col-md-3 txt-end">
-                    <BtnCreaCuenta/>
-                </div>
-                <div className="col-md-2">
-                    <ItemListContainer greeting={greetingMessage} />
+                <div className="col-md-3 d-flex justify-content-end align-items-center">
+                    <BtnCreaCuenta />
+                    <CartWidget />
                 </div>
             </div>
         </div>
-        
+
     )
 
 }

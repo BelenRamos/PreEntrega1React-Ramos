@@ -1,9 +1,11 @@
 const ItemListContainer = ({ greeting }) => {
     return (
-      <div className="container mt-4">
+      <div className="container my-5">
         <div className="row">
-          <div className="col">
-            <h2>{greeting}</h2>
+          <div className="col text-center">
+            <div class="alert alert-primary p-5" role="alert" >
+              {greeting}
+            </div>
           </div>
         </div>
       </div>
