@@ -10,7 +10,8 @@ const NavBar = () => {
                 <div className="col-md-3 d-flex justify-content-center">
                     <Logo />
                 </div>
-                <div className="col-md-5 d-flex align-items-center">
+                <div className="col-md-5 d-flex align-items-center"> 
+                    {/* Categorias clickeables de la pagina */}
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
                             <a className="nav-link text-dark fs-6" href="#">Summer Looks</a>
