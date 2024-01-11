@@ -9,7 +9,7 @@ const App = () => {
   return(
     <div>
       <NavBar/>
-      <ItemListContainer greeting={"Pagina en construccion"}/>
+      <ItemListContainer emoji={"🚧"} greeting={"Pagina en construccion"}/>
       <PreFooter/>
       <Footer/>
     </div>
