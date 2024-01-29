@@ -26,20 +26,24 @@ const ItemCount = ({stock})=>{
 
     return(
         <>
-            <div className="row my-2">
-                <div className="col-md-2">
-                    <div className="btn-group" role="group" >
-                        <button type="button" onClick={decrementar}>-</button>
-                        <button type="button">{counter}</button>
-                        <button type="button" onClick={incrementar}>+</button>
+            <div className="container-fluid my-2">
+                <div className="row justify-content-center align-items-center">
+                    <div className="col-md-6">
+                        <div className="btn-group" role="group">
+                            <button type="button" className="btn btn-secondary btn-sm" onClick={decrementar}>-</button>
+                            <button type="button" className="btn btn-light btn-sm">{counter}</button>
+                            <button type="button" className="btn btn-secondary btn-sm" onClick={incrementar}>+</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-1">
+                    <div className="col d-flex justify-content-center">
+                        <button type="button" className="btn btn-primary btn-sm" onClick={onAdd}>Agregar al carrito</button>
                     </div>
                 </div>
             </div>
-            <div className="row my-1">
-                <div className="col-md-2">
-                        <button type="button" onClick={onAdd}>Agregar al carrito</button>
-                </div>
-            </div>
+
+
         </>
     )
 }

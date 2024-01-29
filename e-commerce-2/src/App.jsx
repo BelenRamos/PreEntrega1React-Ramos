@@ -3,7 +3,7 @@ import Footer from "./components/Footer"
 import Fetch from "./components/Fetch"
 import PreFooter from "./components/PreFooter"
 import NavBar from "./components/NavBar"
-import ItemListContainer from "./components/ItemListContainer"
+//import ItemListContainer from "./components/ItemListContainer"
 import SummerLooks from "./components/SummerLooks";
 import Coleccion from "./components/Coleccion";
 import GiftCard from "./components/GiftCard";
@@ -16,9 +16,8 @@ const App = () => {
   return(
     <BrowserRouter>
       <NavBar/>
-      <ItemListContainer emoji={"🚧"} greeting={"Pagina en construccion"}/>
       <Routes>
-        <Route path="/paginaPrincipal" element={<Fetch/>}/>
+        <Route path="/" element={<Fetch/>}/>
         <Route path="/summerLooks" element={<SummerLooks/>} />
         <Route path="/coleccion" element={<Coleccion/>} />
         <Route path="/beauty&Spa" element={<BeautySpa/>} />

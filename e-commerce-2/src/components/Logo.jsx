@@ -4,7 +4,7 @@ import LogoIsadora from "../assets/LogoIsadora.png"
 const Logo = () => {
     return(
         <>
-            <Link to={"/paginaPrincipal"}><img src={LogoIsadora}></img>
+            <Link to={"/"}><img src={LogoIsadora}></img>
             </Link>
         </>
     )
