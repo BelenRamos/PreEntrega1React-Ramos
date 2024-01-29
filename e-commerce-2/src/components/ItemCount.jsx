@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ItemCount = ({stock})=>{
-    const [counter, setCounter] = useState(1);
+    const [counter, setCounter] = useState(0);
     const [itemStock, setItemStock] = useState(stock)
 
     const incrementar = () => {
@@ -17,14 +17,16 @@ const ItemCount = ({stock})=>{
     }
 
     const onAdd = () => {
-        if (counter < itemStock){
+        if (counter <= itemStock){
             setItemStock(itemStock - counter);
+            setCounter(0);
+            console.log("Agregaste "+counter+" productos al carrito");
         }
     }
 
     return(
         <>
-            <div className="row">
+            <div className="row my-2">
                 <div className="col-md-2">
                     <div className="btn-group" role="group" >
                         <button type="button" onClick={decrementar}>-</button>
@@ -33,7 +35,7 @@ const ItemCount = ({stock})=>{
                     </div>
                 </div>
             </div>
-            <div className="row">
+            <div className="row my-1">
                 <div className="col-md-2">
                         <button type="button" onClick={onAdd}>Agregar al carrito</button>
                 </div>
