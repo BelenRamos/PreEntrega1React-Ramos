@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import arrayProductos from "../components/json/productos.json";
 import ItemList from "./ItemList";
 
 const Fetch = () => {
     const [productos, setProductos] = useState([]);
 
-    fetch('https://fakestoreapi.com/products/category/jewelery')
+    useEffect(()=>{
+        setProductos(arrayProductos);
+    })
+
+    /* fetch("productos.json")
         .then(respuesta => respuesta.json())
-        .then(datos => { setProductos(datos) })
+        .then(datos => { setProductos(datos) }) */
+
 
     return (
         <div className="container">
