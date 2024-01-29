@@ -1,6 +1,8 @@
+import { Link} from "react-router-dom";
 import CartWidget from './CartWidget';
 import BtnCreaCuenta from "./BtnCreaCuenta";
 import Logo from "./Logo";
+
 
 
 const NavBar = () => {
@@ -14,16 +16,16 @@ const NavBar = () => {
                     {/* Categorias clickeables de la pagina */}
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
-                            <a className="nav-link text-dark fs-6" href="#">Summer Looks</a>
+                            <Link className="nav-link text-dark fs-6" to={"/summerLooks"}>Summer Looks</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark fs-6" href="#">Coleccion</a>
+                            <Link className="nav-link text-dark fs-6" to={"/coleccion"}>Coleccion</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark fs-6" href="#">Beauty & Spa</a>
+                            <Link className="nav-link text-dark fs-6" to={"/beauty&Spa"}>Beauty & Spa</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-dark fs-6" href="#">Gift Card</a>
+                            <Link className="nav-link text-dark fs-6" to={"/giftCard"}>Gift Card</Link>
                         </li>
                     </ul>
                 </div>
