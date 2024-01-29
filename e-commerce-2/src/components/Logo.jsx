@@ -1,8 +1,12 @@
+import { Link} from "react-router-dom";
 import LogoIsadora from "../assets/LogoIsadora.png"
 
 const Logo = () => {
     return(
-        <img src={LogoIsadora} alt="Logo Isadora" />
+        <>
+            <Link to={"/paginaPrincipal"}><img src={LogoIsadora}></img>
+            </Link>
+        </>
     )
 
 }

@@ -12,7 +12,7 @@ const NavBar = () => {
                 <div className="col-md-3 d-flex justify-content-center">
                     <Logo />
                 </div>
-                <div className="col-md-5 d-flex align-items-center"> 
+                <div className="col-md-6 d-flex align-items-center"> 
                     {/* Categorias clickeables de la pagina */}
                     <ul className="nav nav-tabs">
                         <li className="nav-item">
@@ -29,7 +29,7 @@ const NavBar = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="col-md-3 d-flex justify-content-end align-items-center">
+                <div className="col-md-2 d-flex justify-content-end align-items-center">
                     <BtnCreaCuenta />
                     <CartWidget />
                 </div>

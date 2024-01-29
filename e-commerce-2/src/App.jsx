@@ -8,6 +8,7 @@ import SummerLooks from "./components/SummerLooks";
 import Coleccion from "./components/Coleccion";
 import GiftCard from "./components/GiftCard";
 import BeautySpa from "./components/BeautySpa";
+import Error404 from "./components/Error404";
 
 
 const App = () => {
@@ -15,14 +16,15 @@ const App = () => {
   return(
     <BrowserRouter>
       <NavBar/>
+      <ItemListContainer emoji={"🚧"} greeting={"Pagina en construccion"}/>
       <Routes>
+        <Route path="/paginaPrincipal" element={<Fetch/>}/>
         <Route path="/summerLooks" element={<SummerLooks/>} />
         <Route path="/coleccion" element={<Coleccion/>} />
         <Route path="/beauty&Spa" element={<BeautySpa/>} />
         <Route path="/giftCard" element={<GiftCard/>} />
+        <Route path="/*" element={<Error404/>}/>
       </Routes>
-      <ItemListContainer emoji={"🚧"} greeting={"Pagina en construccion"}/>
-      <Fetch/>
       <PreFooter/>
       <Footer/>
     </BrowserRouter>

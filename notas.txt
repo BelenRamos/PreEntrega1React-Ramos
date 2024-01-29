@@ -3,3 +3,6 @@ link isadoraonline --> https://ar.isadoraonline.com/?gad_source=1&gclid=CjwKCAiA
 cd e-commerce-2
 npm install
 npm run dev
+
+
+Emojis --> Windows+.
