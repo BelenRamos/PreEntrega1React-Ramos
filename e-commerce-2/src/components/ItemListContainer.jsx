@@ -1,20 +1,30 @@
-import ItemCount from "./ItemCount";
+import { useEffect, useState } from "react";
+//import ItemCount from "./ItemCount";
+import arrayProductos  from "../components/json/productos.json"
+import ItemDetail from "./ItemDetail";
 
 
-const ItemListContainer = ({ emoji, greeting }) => {
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const promesa= new Promise(resolve => {
+      setTimeout(()=> {
+        resolve(arrayProductos);
+      }, 2000);
+      })
+      promesa.then(data => {
+        setItems(data);
+        console.log(data);
+    })
+  }, []);
+
     return (
-      <div className="container my-5">
-        <div className="row">
-          <div className="col text-center">
-            <div className="alert alert-primary p-5" role="alert" >
-              <h1>{emoji}</h1>
-              <h2>{greeting}</h2>
-              <ItemCount stock={10}/>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
+      <>
+        <ItemDetail item={items}/>
+
+      </>
+    )
+  }
   
   export default ItemListContainer;
