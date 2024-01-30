@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 
 const ItemCount = ({stock})=>{
@@ -23,6 +24,10 @@ const ItemCount = ({stock})=>{
             console.log("Agregaste "+counter+" productos al carrito");
         }
     }
+
+    useEffect(() => {
+        setItemStock(stock)
+    }, [stock]);
 
     return(
         <>

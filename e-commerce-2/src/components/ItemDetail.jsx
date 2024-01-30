@@ -12,7 +12,7 @@ const ItemDetail =({item}) =>{
                     <p>#{item.category}</p>
                     <p><b>${item.price}</b></p>
                     <div className="col-md-2 d-flex justify-content-end align-items-center">
-                        <ItemCount stock={10}/>
+                        <ItemCount stock={item.stock}/>
                     </div>
                 </div>
             </div>
