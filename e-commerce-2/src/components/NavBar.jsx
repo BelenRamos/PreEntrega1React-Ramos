@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import CartWidget from './CartWidget';
 import Logo from "./Logo";
 import ItemCount from "./ItemCount";
@@ -15,16 +15,16 @@ const NavBar = () => {
                     {/* Categorias clickeables de la pagina */}
                     <ul className="nav nav-tabs d-flex justify-content-around">
                         <li className="nav-item">
-                            <Link className="nav-link text-dark fs-6" to={"/summerLooks"}>Summer Looks</Link>
+                            <NavLink className="nav-link text-dark fs-6" activeclassname="active" to={"/category/summerlooks"}>Summer Looks</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark fs-6" to={"/coleccion"}>Coleccion</Link>
+                            <NavLink className="nav-link text-dark fs-6" activeclassname="active" to={"/category/coleccion"}>Coleccion</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark fs-6" to={"/beauty&Spa"}>Beauty & Spa</Link>
+                            <NavLink className="nav-link text-dark fs-6" activeclassname="active" to={"/category/beauty&spa"}>Beauty & Spa</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-dark fs-6" to={"/giftCard"}>Gift Card</Link>
+                            <NavLink className="nav-link text-dark fs-6" activeclassname="active" to={"/category/giftcard"}>Gift Card</NavLink>
                         </li>
                     </ul>
                 </div>
