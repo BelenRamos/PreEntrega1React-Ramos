@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Footer from "./components/Footer"
-import Fetch from "./components/Fetch"
+//import Fetch from "./components/Fetch"
 import PreFooter from "./components/PreFooter"
 import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer"
@@ -9,6 +9,7 @@ import Coleccion from "./components/Coleccion";
 import GiftCard from "./components/GiftCard";
 import BeautySpa from "./components/BeautySpa";
 import Error404 from "./components/Error404";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 
 const App = () => {
@@ -16,9 +17,11 @@ const App = () => {
   return(
     <BrowserRouter>
       <NavBar/>
-      <ItemListContainer/>
+      <ItemDetailContainer/>
+      
+      
       <Routes>
-        <Route path="/" element={<Fetch/>}/>
+        <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/summerLooks" element={<SummerLooks/>} />
         <Route path="/coleccion" element={<Coleccion/>} />
         <Route path="/beauty&Spa" element={<BeautySpa/>} />
@@ -31,4 +34,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

@@ -10,7 +10,7 @@ const ItemList = ({productos}) => {
     return(
         <>
             {productosItem.map(produ => (
-                <div key={produ.id} className="col-md-3">
+                <div key={produ.id} className="col-md-2">
                     <Item producto={produ}/>
                 </div>
             ))}
