@@ -1,7 +1,7 @@
 import { NavLink} from "react-router-dom";
 import CartWidget from './CartWidget';
 import Logo from "./Logo";
-import ItemCount from "./ItemCount";
+
 
 
 const NavBar = () => {
@@ -27,9 +27,6 @@ const NavBar = () => {
                             <NavLink className="nav-link text-dark fs-6" activeclassname="active" to={"/category/giftcard"}>Gift Card</NavLink>
                         </li>
                     </ul>
-                </div>
-                <div className="col-md-2 d-flex justify-content-end align-items-center">
-                    <ItemCount stock={10}/>
                 </div>
                 <div className="col-md-1 d-flex justify-content-start align-items-center">
                     <CartWidget />

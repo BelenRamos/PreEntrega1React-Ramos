@@ -1,3 +1,5 @@
+import ItemCount from "./ItemCount";
+
 const ItemDetail =({item}) =>{
     return(
         <div className="container">
@@ -7,8 +9,11 @@ const ItemDetail =({item}) =>{
                 </div>
                 <div className="col-md-4">
                     <h1>{item.name}</h1>
-                    <p>{item.category}</p>
+                    <p>#{item.category}</p>
                     <p><b>${item.price}</b></p>
+                    <div className="col-md-2 d-flex justify-content-end align-items-center">
+                        <ItemCount stock={10}/>
+                    </div>
                 </div>
             </div>
         </div>
