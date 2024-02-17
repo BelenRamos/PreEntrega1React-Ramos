@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({stock})=>{
     const [counter, setCounter] = useState(0);
-    const [itemStock, setItemStock] = useState(stock)
+    const [itemStock, setItemStock] = useState(stock);
+    const [itemAdded, setItemAdded] = useState(false);
 
     const incrementar = () => {
         if (counter < itemStock) {
@@ -21,6 +23,7 @@ const ItemCount = ({stock})=>{
         if (counter <= itemStock){
             setItemStock(itemStock - counter);
             setCounter(0);
+            setItemAdded(true);
             console.log("Agregaste "+counter+" productos al carrito");
         }
     }
@@ -42,7 +45,9 @@ const ItemCount = ({stock})=>{
                     </div>
                     <div className="row m-2 d-flex">
                         <div className="col-auto">
-                            <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button>
+                            {/* <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button> */}
+                            {itemAdded ? <Link to={"/cart"} className="btn btn-outline-dark btn-sm rounded-pill text-nowrap">Terminar mi compra</Link> : <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button> }
+                             
                         </div>
                     </div>
                 </div>
