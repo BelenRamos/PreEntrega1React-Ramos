@@ -46,7 +46,9 @@ const ItemCount = ({stock})=>{
                     <div className="row m-2 d-flex">
                         <div className="col-auto">
                             {/* <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button> */}
-                            {itemAdded ? <Link to={"/cart"} className="btn btn-outline-dark btn-sm rounded-pill text-nowrap">Terminar mi compra</Link> : <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button> }
+                            {itemAdded ? <Link to={"/cart"} className="btn btn-outline-dark btn-sm rounded-pill text-nowrap">Terminar mi compra</Link> : 
+                                <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} 
+                                    onClick={onAdd}>Agregar al carrito</button> }
                              
                         </div>
                     </div>
