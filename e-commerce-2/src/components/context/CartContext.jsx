@@ -27,8 +27,16 @@ const CartContextProvider = ({children}) => {
         return cart.some(item => item.id === id);
     }
 
+    const cantTotalProductos = () => {
+        return cart.reduce((acum, product)=> acum += product.quantity, 0);
+    }
+
+    const sumaTotalProductos = () => {
+        return cart.reduce((acum, product)=> acum += product.quantity * product.price, 0);
+    }
+
     return (
-        <CartContext.Provider value={{cart, addItem, removeItem, clear}}>
+        <CartContext.Provider value={{cart, addItem, removeItem, clear, cantTotalProductos, sumaTotalProductos}}>
             {children}
         </CartContext.Provider>
     )
