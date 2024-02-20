@@ -6,11 +6,12 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     const {id} = useParams();
+   // const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         setProductos(arrayProductos);
         const promesa = new Promise (resolve => {
-            setTimeout(() =>{
+            setTimeout( () => {
                 resolve (id? arrayProductos.filter(item => item.category === id) : arrayProductos);
             }, 500);
         })
