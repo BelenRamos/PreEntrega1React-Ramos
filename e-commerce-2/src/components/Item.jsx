@@ -6,7 +6,7 @@ const Item = ({producto}) => {
             <Link className="nav-link text-dark fs-6" activeclassname="active" to={"/item/"+producto.id}>
             <img src={producto.image} alt={producto.name} style={{ maxWidth: '100%', height: 'auto' }} />
                 <div className="card-body">
-                    <h7 className="card-title">{producto.name}</h7>
+                    <p className="card-title">{producto.name}</p>
                 </div>
             </Link>
         </div>
