@@ -5,6 +5,7 @@ import trash from '../assets/trash3.svg'
 
 const Cart = () => {
     const {cart, addItem, removeItem, clear, CantTotalProductos, SumaTotalProductos} = useContext(CartContext)
+    console.log(cart);
 
     if (CantTotalProductos() == 0) {
         return (
@@ -31,24 +32,33 @@ const Cart = () => {
             </div>
             <div className="row">
                 <div className="col text-center">
-                    <table classname="table">
+                    <table className="table table-bordered text-center align-middle">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {cart.map(product =>
                                 <tr key={product.id}> 
                                     <td><img src={product.image} alt={product.name} width={80}/></td>
-                                    <td>{product.name}</td>
                                     <td>${product.price}</td>
                                     <td>{product.quantity}</td>
                                     <td>${product.quantity * product.price}</td>
-                                    <td><a href="#" onClick={removeItem(product.id)}><img src={trash} alt="Eliminar Producto" title="Eliminar Producto"/></a></td>
+                                    <td><a href="#" onClick={() => {removeItem(product.id)}}><img src={trash} alt="Eliminar Producto" title="Eliminar Producto"/></a></td>
                                 </tr>   
                             )}
                             <tr>
-                                <td colSpan={5}>Suma Total</td>
+                                <td colSpan={4}>Suma Total</td>
                                 <td>${SumaTotalProductos()}</td>
                             </tr>
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
