@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ItemCount = ({stock})=>{
+
+const ItemCount = ({stock, onAdd})=>{
+
     const [counter, setCounter] = useState(0);
     const [itemStock, setItemStock] = useState(stock);
     const [itemAdded, setItemAdded] = useState(false);
@@ -19,12 +21,13 @@ const ItemCount = ({stock})=>{
         }
     }
 
-    const onAdd = () => {
+    const addToCart = () => {
         if (counter <= itemStock){
             setItemStock(itemStock - counter);
-            setCounter(0);
+            setCounter(0); 
+            onAdd(counter);
             setItemAdded(true);
-            console.log("Agregaste "+counter+" productos al carrito");
+            //console.log("Agregaste "+counter+" productos al carrito");
         }
     }
 
@@ -48,7 +51,7 @@ const ItemCount = ({stock})=>{
                             {/* <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} onClick={onAdd}>Agregar al carrito</button> */}
                             {itemAdded ? <Link to={"/cart"} className="btn btn-outline-dark btn-sm rounded-pill text-nowrap">Terminar mi compra</Link> : 
                                 <button type="button" className="btn btn-outline-dark btn-sm rounded-pill text-nowrap" style={{ maxWidth: "150px" }} 
-                                    onClick={onAdd}>Agregar al carrito</button> }
+                                    onClick={addToCart}>Agregar al carrito</button> }
                              
                         </div>
                     </div>
