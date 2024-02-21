@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 //import arrayProductos  from "../components/json/productos.json"
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
-import {getFirestore, collection, getDocs, query} from "firebase/firestore"; //addDoc
+import {getFirestore, collection, getDocs, query, where} from "firebase/firestore"; //addDoc
 
 const ItemListContainer = () => {
-    const [productos, setProductos] = useState([]);
+    const [items, setItems] = useState([]);
     const {id} = useParams();
    // const [loading, setLoading] = useState(true);
 
@@ -23,7 +23,7 @@ const ItemListContainer = () => {
     }, [id]); */
 
     //Llamada desde el firestore
-/*     useEffect(() => {
+/*      useEffect(() => {
         const db= getFirestore();
         const itemsCollection = collection (db, "items");
 
@@ -31,19 +31,19 @@ const ItemListContainer = () => {
             addDoc(itemsCollection, producto); 
         });
 
-        console.log("Proceso finalizado. Productos subidos correctamente.");
+        console.log("Proceso finalizado. Productos subidos correctamente."); // Solo una vez, una vez que funciona se comenta porque duplica los docs 
 
-    }, []) // Solo una vez, una vez que funciona se comenta porque duplica los docs */ 
+    }, [])  */
 
-    useEffect(() =>{
+     useEffect(() =>{
         const db=getFirestore();
         const itemsCollection = collection(db, "items");
         const consulta = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection;
         getDocs(consulta).then(resultado => {
-            setItems(resultado.map(producto => ({id:resultado})))
-        })
+            setItems(resultado.docs.map(producto => ({id:producto.id, ...producto.data()})));
+        });
     
-    }, [id]);
+    }, [id]); 
 
     /* fetch("productos.json")
         .then(respuesta => respuesta.json())
@@ -58,7 +58,7 @@ const ItemListContainer = () => {
                 </div>
             </div>
             <div className="row">
-                <ItemList productos={productos}/>
+                <ItemList productos={items}/>
             </div>
         </div>
     )
