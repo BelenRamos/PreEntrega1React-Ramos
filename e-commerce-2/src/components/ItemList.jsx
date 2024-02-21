@@ -1,17 +1,18 @@
 import {useEffect,useState } from "react";
 import Item from "./Item";
 
-const ItemList = ({productos}) => {
-    const [productosItem, setProductosItem] = useState([])
+const ItemList = ({items}) => {
+    const [itemsItem, setProductosItem] = useState([])
 
     useEffect(() =>{
-        setProductosItem(productos);
-    }, [productos])
+        setProductosItem(items);
+    }, [items])
+    
     return(
         <>
-            {productosItem.map(produ => (
+            {itemsItem.map(produ => (
                 <div key={produ.id} className="col-md-2">
-                    <Item producto={produ}/>
+                    <Item item={produ}/>
                 </div>
             ))}
         </>

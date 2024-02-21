@@ -20,6 +20,7 @@ const ItemDetail =({item}) =>{
                     <h1>{item.name}</h1>
                     <p>#{item.category}</p>
                     <p><b>${item.price}</b></p>
+                    <p>{item.description}</p>
                     <div className="col-md-2 d-flex justify-content-end align-items-center">
                         <ItemCount stock={item.stock} onAdd={onAdd} />
                     </div>
