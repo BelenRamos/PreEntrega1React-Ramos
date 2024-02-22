@@ -34,7 +34,7 @@ const Cart = () => {
             <div className="row">
                 <div className="col text-center">
                     <div className="container my-5 " style={{ textAlign: 'right' }}>
-                        <a href="#" onClick={clear} className="btn btn-outline-secondary">Vaciar Carrito  <img src={trash} alt="Vaciar carrito" title="Vaciar Carrito"/></a>
+                        <a href="#" onClick={clear} className="btn btn-outline-dark">Vaciar Carrito  <img src={trash} alt="Vaciar carrito" title="Vaciar Carrito"/></a>
                     </div>
                     <div className="container">
                         <table className="table table-bordered text-center align-middle">
@@ -44,7 +44,7 @@ const Cart = () => {
                                     <th>Precio</th>
                                     <th>Cantidad</th>
                                     <th>Total</th>
-                                    <th>Acción</th>
+                                    <th>Eliminar Producto</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,6 +64,9 @@ const Cart = () => {
                                 </tr>
                             </tbody>
                         </table>
+                        <div className="container my-5 " style={{ textAlign: 'right' }}>
+                            <Link to={"/checkout"} className="btn btn-outline-success">Terminar compra</Link>
+                        </div>
                     </div>
                 </div>
             </div>
