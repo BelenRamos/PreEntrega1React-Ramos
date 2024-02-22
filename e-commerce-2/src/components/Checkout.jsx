@@ -5,55 +5,34 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
-    const {cart, CantTotalProductos, SumaTotalProductos} = useContext(CartContext);
+    const {cart, CantTotalProductos, SumaTotalProductos, clear} = useContext(CartContext);
     const [email, setEmail] = useState();
-    const [telefono, setTelefono] = useState();
-    const [nombre, setNombre] = useState();
+    const [phone, setTelefono] = useState();
+    const [name, setNombre] = useState();
+    const [orderId, setOrderId]= useState();
     
 
-    if (CantTotalProductos() == 0) {
-        return (
-            <div className="container d-flex align-items-center justify-content-center" style={{ height: "80vh" }}>
-                <div className="row">
-                    <div className="col text-center">
-                        <p className="display-1">💋</p>
-                        <div className="alert alert-danger" role="alert"> 
-                            No se encontraron productos en el carrito
-                        </div>
-                        <Link to={"/"} className="btn btn-outline-secondary my-5">Volver a Pagina Principal</Link>
-                    </div>
-                </div>
-            </div>
-
-        )
-    }
-
     const generarOrden = () => {
-        if (nombre.lenght === 0){
+        if (!name || !email || !phone) {
             return false;
         }
-
-        if (email.lenght === 0){
-            return false;
-        }
-
-        if (telefono.lenght === 0){
-            return false;
-        }
+    
+        const buyer = {name:name, email:email, phone:phone};
+        const items = cart.map(item => ({id:item.idx, title:item.name, price:item.price}));
+        const fecha = new Date();
+        const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
+        const total = SumaTotalProductos();
+        const order= {buyer:buyer, items:items, date:date, total:total};
+    
+        const db = getFirestore();
+        const ordersCollection = collection(db, "orders");
+        addDoc(ordersCollection, order).then(resultado =>{
+            //console.log(resultado);
+            clear();
+            setOrderId(resultado.id);
+        });
     }
-
-    const buyer = {name:nombre, email:email, phone:telefono};
-    const items = cart.map(item => ({id:item.idx, title:item.name, price:item.price}));
-    const fecha = new Date();
-    const date = `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()} ${fecha.getHours()}:${fecha.getMinutes()}`;
-    const total = SumaTotalProductos();
-    const order= {buyter:buyer, items:items, date:date, total:total};
-
-    const db = getFirestore();
-    const ordersCollection = collection(db, "orders");
-    addDoc(ordersCollection, order).then(resultado =>{
-        console.log(resultado);
-    });
+    
     
 
     return (
@@ -67,7 +46,7 @@ const Checkout = () => {
                 <div className="col-md-5 ">
                     <form>
                         <div className="mb-3">
-                            <label htmlFor="nombre" className="form-label">Nombre Completo</label>
+                            <label htmlFor="name" className="form-label">Nombre Completo</label>
                             <input type="text" className="form-control" onInput={(e) => {setNombre(e.target.value)}}/>
                         </div>
                         <div className="mb-3">
@@ -75,7 +54,7 @@ const Checkout = () => {
                             <input type="email" className="form-control" onInput={(e) => {setEmail(e.target.value)}} />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="telefono" className="form-label">Teléfono</label>
+                            <label htmlFor="phone" className="form-label">Teléfono</label>
                             <input type="text" className="form-control" onInput={(e) => {setTelefono(e.target.value)}}/>
                         </div>
                         
@@ -85,7 +64,7 @@ const Checkout = () => {
             </div>
             <div className="row">
                 <div className="col text-center">
-                    <table className="table table-bordered text-center align-middle">
+                    <table className="table text-center align-middle">
                         <thead>
                             <tr>
                                 <th>Producto</th>
@@ -111,6 +90,19 @@ const Checkout = () => {
                     </table>
                 </div>
             </div>
+            <div className="row ">
+                <div className="col">
+                { orderId ? <div className="alert alert-success d-flex text-center align-items-center" role="alert">
+                                <svg className="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlinkHref="#check-circle-fill"/></svg>
+                                <div>
+                                    <p><b>Gracias por su compra! </b></p>
+                                    <p>Tu ID de compra es: <b>{orderId}</b></p>
+                                </div>
+                            </div>
+                        : ""}                    
+                </div>
+            <Link to={"/"} className="btn btn-outline-secondary">Volver a Pagina Principal</Link>    
+            </div>     
         </div>
 
     )
