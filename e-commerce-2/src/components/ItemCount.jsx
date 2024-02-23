@@ -3,9 +3,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
+
 const ItemCount = ({stock, onAdd})=>{
 
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
     const [itemStock, setItemStock] = useState(stock);
     const [itemAdded, setItemAdded] = useState(false);
 
@@ -24,7 +25,7 @@ const ItemCount = ({stock, onAdd})=>{
     const addToCart = () => {
         if (counter <= itemStock){
             setItemStock(itemStock - counter);
-            setCounter(0); 
+            setCounter(1); 
             onAdd(counter);
             setItemAdded(true);
             //console.log("Agregaste "+counter+" productos al carrito");
@@ -62,7 +63,6 @@ const ItemCount = ({stock, onAdd})=>{
         </>
     )
 }
-
 
 
 export default ItemCount;

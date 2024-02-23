@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "firebase": "^10.8.0",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.21.3",
+    "sweetalert2": "^11.10.5"
   }
 }
