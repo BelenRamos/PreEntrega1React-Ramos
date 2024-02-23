@@ -93,7 +93,7 @@ const Checkout = () => {
             <div className="row ">
                 <div className="col">
                 { orderId ? <div className="alert alert-success d-flex text-center align-items-center" role="alert">
-                                <svg className="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlinkHref="#check-circle-fill"/></svg>
+                                <svg className="bi flex-shrink-0 me-5" role="img" aria-label="Success:"><use xlinkHref="#check-circle-fill"/></svg>
                                 <div>
                                     <p><b>Gracias por su compra! </b></p>
                                     <p>Tu ID de compra es: <b>{orderId}</b></p>
